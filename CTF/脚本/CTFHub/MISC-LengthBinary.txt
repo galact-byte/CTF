@@ -1,0 +1,21 @@
+# coding = utf-8
+# --author: valecalida--
+ 
+import pyshark
+
+cap = pyshark.FileCapture('D:/BaiduNetdiskDownload/icmp_len_binary.pcap', display_filter="icmp && icmp.type==8",
+		           tshark_path='E:/vlan/wireshark/tshark.exe')
+cap.load_packets()
+flag = ''
+con1 = ""
+con2 = ""
+for i in range(0, len(cap)):
+    if cap[i].icmp.data_len == '32':
+        con1 += '0'
+        con2 += '1'
+    elif cap[i].icmp.data_len == '64':
+        con1 += '1'
+        con2 += '0'
+print(con1)
+print(con2)
+cap.close()

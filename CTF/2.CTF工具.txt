@@ -1,0 +1,8 @@
+1.验证docker是否启动成功:输入docker run hello-world。
+2.DVWA是基于PHP/MySql搭建的Web应用程序，为安全专业人员测试自己的专业技能
+和工具提供合法的环境。启动命令docker start dvwa,使用本机地址查看,可用
+端口号80和3306。
+3.sqli-labs是一个专业的sql注入练习平台,使用命令:docker start sqli,使用本地
+地址查看,可用端口号32771。
+4.vulhub是一个面向大众的开源漏洞靶场,在/vulhub/tomcat/tomcat8下使用
+docker-compose up -d命令,使用本机地址查看,可用端口8080。

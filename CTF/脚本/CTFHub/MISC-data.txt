@@ -1,0 +1,11 @@
+# coding = utf-8
+# --author: valecalida--
+ 
+import pyshark
+
+cap = pyshark.FileCapture("D:/BaiduNetdiskDownload/ping/ping.pcap", tshark_path="E:/vlan/wireshark/tshark.exe")
+flag = ''
+for i in range(0, 38):
+    flag += chr(int(str(cap[i].icmp.data_data)[0:2], 16))
+print(flag)
+cap.close()

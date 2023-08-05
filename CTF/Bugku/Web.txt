@@ -1,0 +1,7 @@
+1.Simple_SSTI_1 题目要求传入flag的参数,f12发现提示,网址上加上	
+  /?flag={{config.SECRET_KEY}}获得flag。
+
+2.POST 使用burpsuite进行抓包,获得请求头后换成将get请求换成post
+  请求,然后根据提示加上what=flag,最后获得flag。
+  
+3.get请求根据提示网址后面加上/?what=flag即可获得flag。

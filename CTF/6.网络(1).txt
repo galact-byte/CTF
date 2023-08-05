@@ -1,0 +1,1 @@
+1.http加上SSL加密协议,之前是SSL后面是TLS。SSL证书

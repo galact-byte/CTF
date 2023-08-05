@@ -1,0 +1,25 @@
+import xlwt
+#创建一个xls，需要安装xlwt环境库
+book = xlwt.Workbook()
+#创建一个样式(黑色填充，无边界)
+style = xlwt.easyxf('pattern: pattern solid, fore_colour black;font: height 250')
+#添加一个表单，允许覆盖
+table=book.add_sheet('flag_code',cell_overwrite_ok=True)
+#打开txt文件，注意文件路径
+with open( 'D:/BaiduNetdiskDownload/1和0的故事.txt', 'r' ) as f:
+	qr=f.read()
+qrlist=qr.split("\n")
+#first_col=sheet.col(0)
+m=0
+for i in qrlist:
+	n=0
+	for j in i:
+		table.col(n).width=256*3
+		if j=='1':#如果是1则在Excel上涂黑
+			table.write(m,n,'',style=style)
+		else:
+			table.write(m,n,'')#如果是0则不涂黑
+		n+=1
+	m+=1
+book.save('D:/BaiduNetdiskDownload/ctfcode.xls')
+print('over！！')
